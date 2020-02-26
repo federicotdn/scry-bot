@@ -6,6 +6,17 @@
 - good evening
 - hey there
 
+## intent:search
+- Search for a [card](product) please
+- Search [cards](product:card)
+- Please search for [cards](product:card)
+- Search [card](product)
+- Find a [card](product)
+- I'm looking for a specific [card](product)
+- I want to search [sets](product:set)
+- I want to search for a [set](product)
+- Search for a [set of cards](product:set)
+
 ## intent:goodbye
 - bye
 - goodbye
@@ -23,34 +34,4 @@
 - no
 - never
 - I don't think so
-- don't like that
-- no way
 - not really
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
-
-## intent:bot_challenge
-- are you a bot?
-- are you a human?
-- am I talking to a bot?
-- am I talking to a human?
