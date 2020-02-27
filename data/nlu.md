@@ -16,6 +16,15 @@
 - I want to search [sets](product:set)
 - I want to search for a [set](product)
 - Search for a [set of cards](product:set)
+- I would like to perform a search
+- Search for something
+- [card](product)
+- [cards](product:card)
+- [set](product)
+- [sets](product:set)
+- search for [cards](product:card)
+- search please
+- [cards](product:card)
 
 ## intent:goodbye
 - bye
@@ -35,3 +44,11 @@
 - never
 - I don't think so
 - not really
+- nope
+
+## synonym:card
+- cards
+
+## synonym:set
+- sets
+- set of cards

@@ -1,31 +1,35 @@
-## happy path
+## search cards
 * greet
   - utter_greet
-* mood_great
-  - utter_happy
-
-## sad path 1
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* affirm
-  - utter_happy
-
-## sad path 2
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* deny
-  - utter_goodbye
-
-## say goodbye
+* search{"product": "card"}
+  - utter_ok_search_cards
 * goodbye
   - utter_goodbye
 
-## bot challenge
-* bot_challenge
-  - utter_iamabot
+## search sets
+* greet
+  - utter_greet
+* search{"product": "set"}
+  - utter_ok_search_sets
+* goodbye
+  - utter_goodbye
+
+## search by prompting, cards
+* greet
+  - utter_greet
+* search
+  - utter_search_what
+* search{"product": "card"}
+  - utter_ok_search_cards
+* goodbye
+  - utter_goodbye
+
+## search by prompting, sets
+* greet
+  - utter_greet
+* search
+  - utter_search_what
+* search{"product": "sets"}
+  - utter_ok_search_sets
+* goodbye
+  - utter_goodbye

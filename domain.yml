@@ -1,24 +1,28 @@
+entities:
+- product
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-
-actions:
-- utter_greet
-- utter_goodbye
-
+- greet
+- search
+- goodbye
+- affirm
+- deny
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-  - text: "Hi!"
-  - text: "Hello!"
-  - text: "Hello there"
-
   utter_goodbye:
-  - text: "Bye"
-  - text: "Goodbye"
-
+  - text: Bye
+  - text: Goodbye
+  utter_greet:
+  - text: Hi! I'm ScryBot. What would you like to do?
+  utter_ok_search_cards:
+  - text: Ok. We will search for a card.
+  utter_ok_search_sets:
+  - text: Ok. We will search for a set.
+  utter_search_what:
+  - text: What would you like to search for? [sets/cards]
+  utter_default:
+  - text: Sorry, I wasn't able to understand that.
 session_config:
-  session_expiration_time: 60
   carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  product:
+    type: text
