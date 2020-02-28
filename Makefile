@@ -1,3 +1,5 @@
+.PHONY: test
+
 clean:
 	rm -rf models/ *.dot
 
