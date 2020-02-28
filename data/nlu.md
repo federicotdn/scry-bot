@@ -24,7 +24,7 @@
 - [sets](product:set)
 - search for [cards](product:card)
 - search please
-- [cards](product:card)
+- search for something
 
 ## intent:goodbye
 - bye

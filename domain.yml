@@ -1,3 +1,10 @@
+actions:
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_ok_search_cards
+- utter_ok_search_sets
+- utter_search_what
 entities:
 - product
 intents:
@@ -7,6 +14,8 @@ intents:
 - affirm
 - deny
 responses:
+  utter_default:
+  - text: Sorry, I wasn't able to understand that.
   utter_goodbye:
   - text: Bye
   - text: Goodbye
@@ -18,8 +27,6 @@ responses:
   - text: Ok. We will search for a set.
   utter_search_what:
   - text: What would you like to search for? [sets/cards]
-  utter_default:
-  - text: Sorry, I wasn't able to understand that.
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
