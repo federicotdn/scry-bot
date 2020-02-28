@@ -35,4 +35,7 @@ session_config:
   session_expiration_time: 60
 slots:
   product:
-    type: text
+    type: categorical
+    values:
+      - card
+      - set
