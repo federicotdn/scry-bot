@@ -46,10 +46,16 @@
 - Hmm it's an [enchantment](card_type)
 - Hmm it's also a [creature](card_type) card, with color [green](card_color)
 - The card is an [artifact](card_type)
+- Check for [artifacts](card_type:artifact)
+- [creatures](card_type:creature)
 - I know it's a [sorcery](card_type) card
+- look for [sorceries](card_type:sorcery)
+- look for [instants](card_type:instant) please
 - What I know: it's a [blue](card_color) [sorcery](card_type)
+- Get [lands](card_type:land) first, with color [blue](card_color)
 - The card type is [instant](card_type)
 - [white](card_color) [enchantment](card_type)
+- [multicolor](card_color) [enchantments](card_type:enchantment)
 - It's a [land](card_type), the rarity is [common](card_rarity)
 - It's a [rare](card_rarity) [creature](card_type)
 - Well, it's a [mythic](card_rarity) [creature](card_type) for starters
