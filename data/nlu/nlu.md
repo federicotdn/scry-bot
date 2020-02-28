@@ -25,6 +25,26 @@
 - search for [cards](product:card)
 - search please
 - search for something
+- mmmm. [cards](product:card)
+- mmmm. [sets](product:set)
+
+## intent:chitchat/thank
+- Thanks!!
+- thanks for that
+- thanks for this
+- thank you
+- thanks a lot
+- thank mr. bot
+
+## intent:chitchat/challenge_bot
+- Are you a bot?
+- Are you a robot?
+- You're a bot
+- Are you human?
+- Are you a person?
+- Are you real?
+- Who are you?
+- What are you?
 
 ## intent:goodbye
 - bye
