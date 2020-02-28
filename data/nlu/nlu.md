@@ -28,6 +28,34 @@
 - mmmm. [cards](product:card)
 - mmmm. [sets](product:set)
 
+## intent:describe_card
+- It's a [blue](card_color) card
+- It's [red](card_color)
+- It's [white](card_color) colored
+- It's [green](card_color) one
+- The color is [white](card_color)
+- The color is [black](card_color)
+- It has [black](card_color) color
+- It's a [colorless](card_color) card
+- It does not have a color, it's a [colorless](card_color) card
+- It's a [multicolor](card_color) card
+- It's a [multicolored](card_color:multicolor) one
+- It's a [multicoloured](card_color:multicolor) card
+- Looking for a [black](card_color) [enchantment](card_type)
+- Looking for an [instant](card_type) card
+- Hmm it's an [enchantment](card_type)
+- Hmm it's also a [creature](card_type) card, with color [green](card_color)
+- The card is an [artifact](card_type)
+- I know it's a [sorcery](card_type) card
+- What I know: it's a [blue](card_color) [sorcery](card_type)
+- The card type is [instant](card_type)
+- [white](card_color) [enchantment](card_type)
+- It's a [land](card_type), the rarity is [common](card_rarity)
+- It's a [rare](card_rarity) [creature](card_type)
+- Well, it's a [mythic](card_rarity) [creature](card_type) for starters
+- I remember it's an [uncommon](card_rarity) [black](card_color) [instant](card_type) card
+- I believe it's a [common](card_rarity) card, don't know the color
+
 ## intent:chitchat/thank
 - Thanks!!
 - thanks for that

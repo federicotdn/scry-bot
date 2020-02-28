@@ -4,6 +4,8 @@
 * search{"product": "card"}
   - slot{"product": "card"}
   - utter_ok_search_cards
+* describe_card
+  - action_search_cards
 * goodbye
   - utter_goodbye
 
@@ -24,6 +26,8 @@
 * search{"product": "card"}
   - slot{"product": "card"}
   - utter_ok_search_cards
+* describe_card
+  - action_search_cards
 * goodbye
   - utter_goodbye
 
