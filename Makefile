@@ -3,3 +3,6 @@ clean:
 
 retrain: clean
 	rasa train
+
+validate:
+	rasa data validate -vv
