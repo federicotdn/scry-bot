@@ -1,27 +1,28 @@
 actions:
+- action_random_card
+- action_search_cards
+- respond_chitchat
 - utter_default
 - utter_goodbye
 - utter_greet
 - utter_ok_search_cards
 - utter_ok_search_sets
 - utter_search_what
-- respond_chitchat
-- action_search_cards
-- action_random_card
 entities:
-- product
-- card_type
 - card_color
 - card_rarity
+- card_subtype
+- card_type
+- product
 intents:
-- greet
 - search
+- greet
+- describe_card
 - goodbye
 - affirm
 - deny
 - chitchat:
     triggers: respond_chitchat
-- describe_card
 - random_card
 responses:
   utter_default:
@@ -41,15 +42,16 @@ session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
 slots:
-  product:
-    type: categorical
-    values:
-      - card
-      - set
-  card_type:
-    type: unfeaturized
   card_color:
     type: unfeaturized
   card_rarity:
     type: unfeaturized
-      
+  card_subtype:
+    type: unfeaturized
+  card_type:
+    type: unfeaturized
+  product:
+    type: categorical
+    values:
+    - card
+    - set

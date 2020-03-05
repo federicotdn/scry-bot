@@ -40,6 +40,7 @@
 - It's a [colorless](card_color) card
 - It does not have a color, it's a [colorless](card_color) card
 - It's a [multicolor](card_color) card
+- It's an [abzan](card_color) card
 - It's a [multicolored](card_color:multicolor) one
 - It's a [multicoloured](card_color:multicolor) card
 - Looking for a [black](card_color) [enchantment](card_type)
@@ -52,6 +53,7 @@
 - I know it's a [sorcery](card_type) card
 - look for [sorceries](card_type:sorcery)
 - look for [instants](card_type:instant) please
+- look for [instants](card_type:instant) please, with [golgari](card_color) colors
 - What I know: it's a [blue](card_color) [sorcery](card_type)
 - Get [lands](card_type:land) first, with color [blue](card_color)
 - The card type is [instant](card_type)
@@ -62,6 +64,12 @@
 - Well, it's a [mythic](card_rarity) [creature](card_type) for starters
 - I remember it's an [uncommon](card_rarity) [black](card_color) [instant](card_type) card
 - I believe it's a [common](card_rarity) card, don't know the color
+- It's a [legendary](card_subtype:legend) [creature](card_type)
+- A [legend](card_subtype) card, [black](card_color) color
+- Give me [legend](card_subtype) cards
+
+## lookup:colors
+data/lookup_colors.txt
 
 ## intent:random_card
 - show me a random card

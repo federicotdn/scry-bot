@@ -31,6 +31,17 @@
 * goodbye
   - utter_goodbye
 
+## just search
+* search{"product": "card"}
+  - slot{"product": "card"}
+  - utter_ok_search_cards
+* describe_card
+  - action_search_cards
+
+## just search, fast
+* describe_card
+  - action_search_cards
+
 ## search by prompting, sets
 * greet
   - utter_greet

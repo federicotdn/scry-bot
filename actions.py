@@ -32,6 +32,7 @@ class ScryfallAPI:
     async def search_cards(
         self,
         card_type: Optional[Text] = None,
+        card_subtype: Optional[Text] = None,
         card_color: Optional[Text] = None,
         card_rarity: Optional[Text] = None,
     ) -> List[Card]:
@@ -39,6 +40,9 @@ class ScryfallAPI:
 
         if card_type:
             q += f"type:{card_type}"
+
+        if card_subtype:
+            q += f" type:{card_subtype}"
 
         if card_color:
             q += f" color:{card_color}"
@@ -92,17 +96,22 @@ class SearchCardsAction(Action):
         dispatcher.utter_message(text="Here's the card info:")
 
         card_type = tracker.get_slot("card_type")
+        card_subtype = tracker.get_slot("card_subtype")
         card_color = tracker.get_slot("card_color")
         card_rarity = tracker.get_slot("card_rarity")
 
         dispatcher.utter_message(
-            text=f"Type: {card_type}, color: {card_color}, rarity: {card_rarity}"
+            f"Type: {card_type}, subtype: {card_subtype}, color: {card_color}, "
+            f"rarity: {card_rarity}"
         )
 
         dispatcher.utter_message(text="Searching...")
 
         cards = await api.search_cards(
-            card_type=card_type, card_color=card_color, card_rarity=card_rarity
+            card_type=card_type,
+            card_subtype=card_subtype,
+            card_color=card_color,
+            card_rarity=card_rarity,
         )
 
         for card in cards[:5]:
