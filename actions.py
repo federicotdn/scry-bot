@@ -21,7 +21,13 @@ class Card:
 
 class ScryfallAPI:
     def __init__(self) -> None:
-        self._client = None
+        self._http_client = None
+
+    async def _client(self) -> aiohttp.ClientSession:
+        if not self._http_client:
+            self._http_client = aiohttp.ClientSession(raise_for_status=True)
+
+        return self._http_client
 
     async def search_cards(
         self,
@@ -45,10 +51,8 @@ class ScryfallAPI:
 
         params = {"q": q}
 
-        if not self._client:
-            self._client = aiohttp.ClientSession(raise_for_status=True)
-
-        async with self._client.get(URL + "/cards/search", params=params) as resp:
+        client = await self._client()
+        async with client.get(URL + "/cards/search", params=params) as resp:
             ls = await resp.json()
             results = []
 
@@ -60,11 +64,21 @@ class ScryfallAPI:
 
             return results
 
+    async def random_card(self) -> Optional[Card]:
+        client = await self._client()
+
+        async with client.get(URL + "/cards/random") as resp:
+            data = await resp.json()
+            try:
+                return Card.from_json(data)
+            except KeyError:
+                return None
+
+
+api = ScryfallAPI()
+
 
 class SearchCardsAction(Action):
-    def __init__(self) -> None:
-        self._api = ScryfallAPI()
-
     def name(self) -> Text:
         return "action_search_cards"
 
@@ -87,7 +101,7 @@ class SearchCardsAction(Action):
 
         dispatcher.utter_message(text="Searching...")
 
-        cards = await self._api.search_cards(
+        cards = await api.search_cards(
             card_type=card_type, card_color=card_color, card_rarity=card_rarity
         )
 
@@ -95,3 +109,21 @@ class SearchCardsAction(Action):
             dispatcher.utter_message(text=f"Found this card: {card.name}")
 
         return []
+
+
+class RandomCardAction(Action):
+    def name(self) -> Text:
+        return "action_random_card"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        card = None
+        while not card:
+            card = await api.random_card()
+
+        dispatcher.utter_message(text="Here's a random card:")
+        dispatcher.utter_message(text=f"{card.name}")

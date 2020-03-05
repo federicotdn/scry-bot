@@ -41,3 +41,11 @@
   - utter_ok_search_sets
 * goodbye
   - utter_goodbye
+
+## random card
+* greet
+  - utter_greet
+* random_card
+  - action_random_card
+* goodbye
+  - utter_goodbye

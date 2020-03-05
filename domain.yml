@@ -7,6 +7,7 @@ actions:
 - utter_search_what
 - respond_chitchat
 - action_search_cards
+- action_random_card
 entities:
 - product
 - card_type
@@ -21,6 +22,7 @@ intents:
 - chitchat:
     triggers: respond_chitchat
 - describe_card
+- random_card
 responses:
   utter_default:
   - text: Sorry, I wasn't able to understand that.

@@ -3,8 +3,14 @@
 clean:
 	rm -rf models/ *.dot
 
-retrain: clean
-	rasa train
+retrain:
+	rasa train --force
+
+talk:
+	rasa shell
+
+actions:
+	rasa run actions
 
 validate:
 	rasa data validate -vv

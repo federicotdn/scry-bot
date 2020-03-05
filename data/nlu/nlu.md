@@ -18,6 +18,7 @@
 - Search for a [set of cards](product:set)
 - I would like to perform a search
 - Search for something
+- for a [card](product)
 - [card](product)
 - [cards](product:card)
 - [set](product)
@@ -61,6 +62,13 @@
 - Well, it's a [mythic](card_rarity) [creature](card_type) for starters
 - I remember it's an [uncommon](card_rarity) [black](card_color) [instant](card_type) card
 - I believe it's a [common](card_rarity) card, don't know the color
+
+## intent:random_card
+- show me a random card
+- get me a random card
+- get me a random card please
+- random card
+- any card!
 
 ## intent:chitchat/thank
 - Thanks!!
