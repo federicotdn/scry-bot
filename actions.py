@@ -33,22 +33,23 @@ class ScryfallAPI:
         self,
         card_type: Optional[Text] = None,
         card_subtype: Optional[Text] = None,
+        card_creature_type: Optional[Text] = None,
         card_color: Optional[Text] = None,
         card_rarity: Optional[Text] = None,
     ) -> List[Card]:
         q = ""
 
-        if card_type:
-            q += f"type:{card_type}"
+        params = [
+            ("type", card_type),
+            ("type", card_subtype),
+            ("type", card_creature_type),
+            ("color", card_color),
+            ("rarity", card_rarity),
+        ]
 
-        if card_subtype:
-            q += f" type:{card_subtype}"
-
-        if card_color:
-            q += f" color:{card_color}"
-
-        if card_rarity:
-            q += f" rarity:{card_rarity}"
+        for param_name, param_val in params:
+            if param_val:
+                q += f" {param_name}:{param_val}"
 
         if not q:
             raise ValueError
@@ -97,19 +98,19 @@ class SearchCardsAction(Action):
 
         card_type = tracker.get_slot("card_type")
         card_subtype = tracker.get_slot("card_subtype")
+        card_creature_type = tracker.get_slot("card_creature_type")
         card_color = tracker.get_slot("card_color")
         card_rarity = tracker.get_slot("card_rarity")
 
         dispatcher.utter_message(
             f"Type: {card_type}, subtype: {card_subtype}, color: {card_color}, "
-            f"rarity: {card_rarity}"
+            f"rarity: {card_rarity}, creature type: {card_creature_type}"
         )
-
-        dispatcher.utter_message(text="Searching...")
 
         cards = await api.search_cards(
             card_type=card_type,
             card_subtype=card_subtype,
+            card_creature_type=card_creature_type,
             card_color=card_color,
             card_rarity=card_rarity,
         )

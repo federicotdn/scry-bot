@@ -12,6 +12,7 @@ entities:
 - card_color
 - card_rarity
 - card_subtype
+- card_creature_type
 - card_type
 - product
 intents:
@@ -49,6 +50,8 @@ slots:
   card_subtype:
     type: unfeaturized
   card_type:
+    type: unfeaturized
+  card_creature_type:
     type: unfeaturized
   product:
     type: categorical

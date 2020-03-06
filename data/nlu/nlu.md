@@ -67,9 +67,19 @@
 - It's a [legendary](card_subtype:legend) [creature](card_type)
 - A [legend](card_subtype) card, [black](card_color) color
 - Give me [legend](card_subtype) cards
+- I'm looking for a [legendary](card_subtype:legend) [goblin](card_creature_type)
+- Find me a [black](card_color) [horror](card_creature_type) card
+- Find me [green](card_color) [beast](card_creature_type) cards please
+- It's a [werewolf](card_creature_type) [creature](card_type)
+- It's a [serpent](card_creature_type)
+- I'm looking for all [soldier](card_creature_type) cards, any color
+- I'm looking for all [angel](card_creature_type) cards, no color preference
 
 ## lookup:colors
 data/lookup_colors.txt
+
+## lookup:creatures
+data/lookup_creatures.txt
 
 ## intent:random_card
 - show me a random card
