@@ -1,6 +1,7 @@
 actions:
 - action_random_card
 - action_search_cards
+- action_pre_search_cards
 - respond_chitchat
 - utter_default
 - utter_goodbye

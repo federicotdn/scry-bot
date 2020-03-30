@@ -83,6 +83,31 @@ class ScryfallAPI:
 api = ScryfallAPI()
 
 
+class PreSearchCardsAction(Action):
+    def name(self) -> Text:
+        return "action_pre_search_cards"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Ok! Here's the card info I understood:")
+
+        card_type = tracker.get_slot("card_type")
+        card_subtype = tracker.get_slot("card_subtype")
+        card_creature_type = tracker.get_slot("card_creature_type")
+        card_color = tracker.get_slot("card_color")
+        card_rarity = tracker.get_slot("card_rarity")
+
+        if card_type:
+            dispatcher.utter_message(text=f"The card's type is: {card_type}.")
+
+
+        dispatcher.utter_message(text="Searching...")
+
+
 class SearchCardsAction(Action):
     def name(self) -> Text:
         return "action_search_cards"
@@ -93,19 +118,11 @@ class SearchCardsAction(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Here's the card info:")
-
         card_type = tracker.get_slot("card_type")
         card_subtype = tracker.get_slot("card_subtype")
         card_creature_type = tracker.get_slot("card_creature_type")
         card_color = tracker.get_slot("card_color")
         card_rarity = tracker.get_slot("card_rarity")
-
-        dispatcher.utter_message(
-            f"Type: {card_type}, subtype: {card_subtype}, color: {card_color}, "
-            f"rarity: {card_rarity}, creature type: {card_creature_type}"
-        )
 
         cards = await api.search_cards(
             card_type=card_type,

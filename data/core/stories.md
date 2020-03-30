@@ -5,6 +5,7 @@
   - slot{"product": "card"}
   - utter_ok_search_cards
 * describe_card
+  - action_pre_search_cards
   - action_search_cards
 * goodbye
   - utter_goodbye
@@ -27,6 +28,7 @@
   - slot{"product": "card"}
   - utter_ok_search_cards
 * describe_card
+  - action_pre_search_cards
   - action_search_cards
 * goodbye
   - utter_goodbye
@@ -36,10 +38,12 @@
   - slot{"product": "card"}
   - utter_ok_search_cards
 * describe_card
+  - action_pre_search_cards
   - action_search_cards
 
 ## just search, fast
 * describe_card
+  - action_pre_search_cards
   - action_search_cards
 
 ## search by prompting, sets
