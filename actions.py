@@ -104,6 +104,19 @@ class PreSearchCardsAction(Action):
         if card_type:
             dispatcher.utter_message(text=f"The card's type is: {card_type}.")
 
+        if card_subtype:
+            dispatcher.utter_message(text=f"The card's subtype is: {card_subtype}.")
+
+        if card_creature_type:
+            dispatcher.utter_message(
+                text=f"The creature's type is: {card_creature_type}."
+            )
+
+        if card_color:
+            dispatcher.utter_message(text=f"The card's color is: {card_color}.")
+
+        if card_rarity:
+            dispatcher.utter_message(text=f"The card's rarity is: {card_rarity}.")
 
         dispatcher.utter_message(text="Searching...")
 

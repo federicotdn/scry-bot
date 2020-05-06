@@ -10,7 +10,7 @@ talk:
 	rasa shell
 
 actions:
-	rasa run actions
+	rasa run actions --auto-reload
 
 validate:
 	rasa data validate -vv
