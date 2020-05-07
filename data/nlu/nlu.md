@@ -8,26 +8,26 @@
 
 ## intent:search
 - Search for a [card](product) please
-- Search [cards](product:card)
-- Please search for [cards](product:card)
+- Search [cards]{"entity": "product", "value": "card"}
+- Please search for [cards]{"entity": "product", "value": "card"}
 - Search [card](product)
 - Find a [card](product)
 - I'm looking for a specific [card](product)
-- I want to search [sets](product:set)
+- I want to search [sets]{"entity": "product", "value": "set"}
 - I want to search for a [set](product)
-- Search for a [set of cards](product:set)
+- Search for a [set of cards]{"entity": "product", "value": "set"}
 - I would like to perform a search
 - Search for something
 - for a [card](product)
 - [card](product)
-- [cards](product:card)
+- [cards]{"entity": "product", "value": "card"}
 - [set](product)
-- [sets](product:set)
-- search for [cards](product:card)
+- [sets]{"entity": "product", "value": "set"}
+- search for [cards]{"entity": "product", "value": "card"}
 - search please
 - search for something
-- mmmm. [cards](product:card)
-- mmmm. [sets](product:set)
+- mmmm. [cards]{"entity": "product", "value": "card"}
+- mmmm. [sets]{"entity": "product", "value": "set"}
 
 ## intent:describe_card
 - It's a [blue](card_color) card
@@ -41,33 +41,33 @@
 - It does not have a color, it's a [colorless](card_color) card
 - It's a [multicolor](card_color) card
 - It's an [abzan](card_color) card
-- It's a [multicolored](card_color:multicolor) one
-- It's a [multicoloured](card_color:multicolor) card
+- It's a [multicolored]{"entity": "card_color", "value": "multicolor"} one
+- It's a [multicoloured]{"entity": "card_color", "value": "multicolor"} card
 - Looking for a [black](card_color) [enchantment](card_type)
 - Looking for an [instant](card_type) card
 - Hmm it's an [enchantment](card_type)
 - Hmm it's also a [creature](card_type) card, with color [green](card_color)
 - The card is an [artifact](card_type)
-- Check for [artifacts](card_type:artifact)
-- [creatures](card_type:creature)
+- Check for [artifacts]{"entity": "card_type", "value": "artifact"}
+- [creatures]{"entity": "card_type", "value": "creature"}
 - I know it's a [sorcery](card_type) card
-- look for [sorceries](card_type:sorcery)
-- look for [instants](card_type:instant) please
-- look for [instants](card_type:instant) please, with [golgari](card_color) colors
+- look for [sorceries]{"entity": "card_type", "value": "sorcery"}
+- look for [instants]{"entity": "card_type", "value": "instant"} please
+- look for [instants]{"entity": "card_type", "value": "instant"} please, with [golgari](card_color) colors
 - What I know: it's a [blue](card_color) [sorcery](card_type)
-- Get [lands](card_type:land) first, with color [blue](card_color)
+- Get [lands]{"entity": "card_type", "value": "land"} first, with color [blue](card_color)
 - The card type is [instant](card_type)
 - [white](card_color) [enchantment](card_type)
-- [multicolor](card_color) [enchantments](card_type:enchantment)
+- [multicolor](card_color) [enchantments]{"entity": "card_type", "value": "enchantment"}
 - It's a [land](card_type), the rarity is [common](card_rarity)
 - It's a [rare](card_rarity) [creature](card_type)
 - Well, it's a [mythic](card_rarity) [creature](card_type) for starters
 - I remember it's an [uncommon](card_rarity) [black](card_color) [instant](card_type) card
 - I believe it's a [common](card_rarity) card, don't know the color
-- It's a [legendary](card_subtype:legend) [creature](card_type)
+- It's a [legendary]{"entity": "card_subtype", "value": "legend"} [creature](card_type)
 - A [legend](card_subtype) card, [black](card_color) color
 - Give me [legend](card_subtype) cards
-- I'm looking for a [legendary](card_subtype:legend) [goblin](card_creature_type)
+- I'm looking for a [legendary]{"entity": "card_subtype", "value": "legend"} [goblin](card_creature_type)
 - Find me a [black](card_color) [horror](card_creature_type) card
 - Find me [green](card_color) [beast](card_creature_type) cards please
 - It's a [werewolf](card_creature_type) [creature](card_type)
