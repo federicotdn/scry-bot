@@ -1,3 +1,58 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- search
+- greet
+- describe_card
+- goodbye
+- affirm
+- deny
+- chitchat:
+    triggers: respond_chitchat
+- random_card
+entities:
+- card_color
+- card_rarity
+- card_subtype
+- card_creature_type
+- card_type
+- product
+slots:
+  card_color:
+    type: unfeaturized
+  card_creature_type:
+    type: unfeaturized
+  card_rarity:
+    type: unfeaturized
+  card_subtype:
+    type: unfeaturized
+  card_type:
+    type: unfeaturized
+  product:
+    type: categorical
+    values:
+    - card
+    - set
+responses:
+  utter_default:
+  - text: Sorry, I wasn't able to understand that.
+  utter_goodbye:
+  - text: Bye
+  - text: Goodbyeeee
+  utter_greet:
+  - buttons:
+    - payload: search for a card
+      title: Search for a card
+    - payload: fetch a random card
+      title: Fetch a random card
+    text: Hi! I'm ScryBot. What would you like to do?
+  utter_ok_search_cards:
+  - text: Ok. We will search for a card. Can you describe it for me?
+  utter_ok_search_sets:
+  - text: Ok. We will search for a set.
+  utter_search_what:
+  - text: What would you like to search for? [sets/cards]
 actions:
 - action_random_card
 - action_search_cards
@@ -9,58 +64,3 @@ actions:
 - utter_ok_search_cards
 - utter_ok_search_sets
 - utter_search_what
-entities:
-- card_color
-- card_rarity
-- card_subtype
-- card_creature_type
-- card_type
-- product
-intents:
-- search
-- greet
-- describe_card
-- goodbye
-- affirm
-- deny
-- chitchat:
-    triggers: respond_chitchat
-- random_card
-responses:
-  utter_default:
-  - text: Sorry, I wasn't able to understand that.
-  utter_goodbye:
-  - text: Bye
-  - text: Goodbye
-  utter_greet:
-  - text: Hi! I'm ScryBot. What would you like to do?
-    buttons:
-      - title: "Search for a card"
-        payload: "search for a card"
-      - title: "Fetch a random card"
-        payload: "fetch a random card"
-  utter_ok_search_cards:
-  - text: Ok. We will search for a card. Can you describe it for me?
-  utter_ok_search_sets:
-  - text: Ok. We will search for a set.
-  utter_search_what:
-  - text: What would you like to search for? [sets/cards]
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 60
-slots:
-  card_color:
-    type: unfeaturized
-  card_rarity:
-    type: unfeaturized
-  card_subtype:
-    type: unfeaturized
-  card_type:
-    type: unfeaturized
-  card_creature_type:
-    type: unfeaturized
-  product:
-    type: categorical
-    values:
-    - card
-    - set
