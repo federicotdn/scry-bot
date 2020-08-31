@@ -132,3 +132,4 @@ dmypy.json
 models/
 *.dot
 results/
+tracker.db
