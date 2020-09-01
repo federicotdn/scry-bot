@@ -75,12 +75,6 @@
 - I'm looking for all [soldier](card_creature_type) cards, any color
 - I'm looking for all [angel](card_creature_type) cards, no color preference
 
-## lookup:colors
-data/lookup_colors.txt
-
-## lookup:creatures
-data/lookup_creatures.txt
-
 ## intent:random_card
 - show me a random card
 - get me a random card
@@ -118,6 +112,7 @@ data/lookup_creatures.txt
 - of course
 - that sounds good
 - correct
+- lalala
 
 ## intent:deny
 - no
@@ -126,9 +121,40 @@ data/lookup_creatures.txt
 - not really
 - nope
 
+## synonym:artifact
+- artifacts
+
 ## synonym:card
 - cards
+
+## synonym:creature
+- creatures
+
+## synonym:enchantment
+- enchantments
+
+## synonym:instant
+- instants
+
+## synonym:land
+- lands
+
+## synonym:legend
+- legendary
+
+## synonym:multicolor
+- multicolored
+- multicoloured
 
 ## synonym:set
 - sets
 - set of cards
+
+## synonym:sorcery
+- sorceries
+
+## lookup:lookup_colors.txt
+  data/lookup_colors.txt
+
+## lookup:lookup_creatures.txt
+  data/lookup_creatures.txt
