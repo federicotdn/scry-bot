@@ -132,4 +132,6 @@ dmypy.json
 models/
 *.dot
 results/
-tracker.db
+tracker.db*
+rasa.db*
+events.db*
