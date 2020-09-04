@@ -1,14 +1,9 @@
+version: "2.0"
 actions:
 - action_random_card
 - action_search_cards
 - action_pre_search_cards
 - respond_chitchat
-- utter_default
-- utter_goodbye
-- utter_greet
-- utter_ok_search_cards
-- utter_ok_search_sets
-- utter_search_what
 entities:
 - card_color
 - card_rarity
@@ -23,12 +18,9 @@ intents:
 - goodbye
 - affirm
 - deny
-- chitchat:
-    triggers: respond_chitchat
+- chitchat
 - random_card
 responses:
-  utter_default:
-  - text: Sorry, I wasn't able to understand that.
   utter_goodbye:
   - text: Bye
   - text: Goodbye

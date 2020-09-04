@@ -1,0 +1,90 @@
+version: "2.0"
+stories:
+- story: search cards
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search
+    entities:
+    - product: card
+  - slot_was_set:
+    - product: card
+  - action: utter_ok_search_cards
+  - intent: describe_card
+  - action: action_pre_search_cards
+  - action: action_search_cards
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: search sets
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search
+    entities:
+    - product: set
+  - slot_was_set:
+    - product: set
+  - action: utter_ok_search_sets
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: search by prompting, cards
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search
+  - action: utter_search_what
+  - intent: search
+    entities:
+    - product: card
+  - slot_was_set:
+    - product: card
+  - action: utter_ok_search_cards
+  - intent: describe_card
+  - action: action_pre_search_cards
+  - action: action_search_cards
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: just search
+  steps:
+  - intent: search
+    entities:
+    - product: card
+  - slot_was_set:
+    - product: card
+  - action: utter_ok_search_cards
+  - intent: describe_card
+  - action: action_pre_search_cards
+  - action: action_search_cards
+
+- story: just search, fast
+  steps:
+  - intent: describe_card
+  - action: action_pre_search_cards
+  - action: action_search_cards
+
+- story: search by prompting, sets
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search
+  - action: utter_search_what
+  - intent: search
+    entities:
+    - product: set
+  - slot_was_set:
+    - product: set
+  - action: utter_ok_search_sets
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: random card
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: random_card
+  - action: action_random_card
+  - intent: goodbye
+  - action: utter_goodbye

@@ -1,7 +1,8 @@
 .PHONY: test
 
 clean:
-	rm -rf models/ *.dot
+	rm -rfv models/ *.dot
+	rm -v *.db*
 
 retrain:
 	rasa train --force
