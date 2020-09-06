@@ -2,7 +2,7 @@
 
 clean:
 	rm -rfv models/ *.dot
-	rm -v *.db*
+	rm -fv *.db*
 
 retrain:
 	rasa train --force
