@@ -4,3 +4,7 @@ rules:
   steps:
   - intent: chitchat
   - action: respond_chitchat
+- rule: respond to meta
+  steps:
+  - intent: meta
+  - action: respond_meta

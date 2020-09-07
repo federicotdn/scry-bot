@@ -102,6 +102,13 @@ nlu:
     - Are you real?
     - Who are you?
     - What are you?
+- intent: meta/capabilities
+  examples: |
+    - What can you do?
+    - What else can you do?
+    - What stuff can you do?
+    - What can I ask you?
+    - Is there anything else you can do?
 - intent: goodbye
   examples: |
     - bye

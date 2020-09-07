@@ -4,6 +4,7 @@ actions:
 - action_search_cards
 - action_pre_search_cards
 - respond_chitchat
+- respond_meta
 entities:
 - card_color
 - card_rarity
@@ -19,6 +20,7 @@ intents:
 - affirm
 - deny
 - chitchat
+- meta
 - random_card
 responses:
   utter_goodbye:

@@ -5,3 +5,5 @@ responses:
   - text: You're welcome.
   chitchat/challenge_bot:
   - text: I'm a bot powered by Rasa Open Source.
+  meta/capabilities:
+  - text: I can search for Magic the Gathering cards and sets, using the Scryfall API.
