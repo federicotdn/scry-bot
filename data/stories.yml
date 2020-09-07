@@ -47,6 +47,16 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: prev card
+  steps:
+  - intent: previous_card
+  - action: action_paginate_cards
+
+- story: next card
+  steps:
+  - intent: next_card
+  - action: action_paginate_cards
+
 - story: just search
   steps:
   - intent: search

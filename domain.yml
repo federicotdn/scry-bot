@@ -3,6 +3,7 @@ actions:
 - action_random_card
 - action_search_cards
 - action_pre_search_cards
+- action_paginate_cards
 - respond_chitchat
 - respond_meta
 entities:
@@ -22,6 +23,8 @@ intents:
 - chitchat
 - meta
 - random_card
+- previous_card
+- next_card
 responses:
   utter_goodbye:
   - text: Bye
@@ -38,7 +41,12 @@ responses:
   utter_ok_search_sets:
   - text: Ok. We will search for a set.
   utter_search_what:
-  - text: What would you like to search for? [sets/cards]
+  - text: What would you like to search for?
+    buttons:
+      - title: "Cards"
+        payload: "card"
+      - title: "Sets"
+        payload: "set"
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
@@ -52,6 +60,10 @@ slots:
   card_type:
     type: unfeaturized
   card_creature_type:
+    type: unfeaturized
+  card_results:
+    type: unfeaturized
+  card_results_index:
     type: unfeaturized
   product:
     type: categorical

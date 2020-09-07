@@ -22,6 +22,12 @@ nlu:
     - I would like to perform a search
     - Search for something
     - for a [card](product)
+    - ok, now lets search another [card](product)
+    - search for other [card](product)
+    - search for other [set](product) now
+    - search for another [card](product)
+    - search for another [set](product) now please
+    - now I want to search for a new [card](product)
     - [card](product)
     - [cards]{"entity": "product", "value": "card"}
     - [set](product)
@@ -109,6 +115,25 @@ nlu:
     - What stuff can you do?
     - What can I ask you?
     - Is there anything else you can do?
+- intent: next_card
+  examples: |
+    - show me the next one
+    - next result
+    - next card
+    - next
+    - lets see the next one
+    - ok next
+    - next card please
+    - one more card
+    - following card
+- intent: previous_card
+  examples: |
+    - go back one card
+    - previous result
+    - previous card
+    - lets go back one
+    - lets go back
+    - one less
 - intent: goodbye
   examples: |
     - bye

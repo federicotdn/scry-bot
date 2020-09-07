@@ -1,6 +1,7 @@
 from typing import Any, Text, Dict, List, Optional
 
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 import aiohttp
 
@@ -17,6 +18,16 @@ class Card:
     @classmethod
     def from_json(self, data: Dict[Text, Any]) -> "Card":
         return Card(data["id"], data["name"], data["image_uris"]["normal"])
+
+    def as_dict(self) -> Dict[Text, Any]:
+        return {
+            "id": self.uuid,
+            "name": self.name,
+            "image_uris": {"normal": self.image},
+        }
+
+    def as_utterance(self) -> Dict[Text, Any]:
+        return {"image": self.image, "text": self.name}
 
 
 class ScryfallAPI:
@@ -54,7 +65,7 @@ class ScryfallAPI:
         if not q:
             raise ValueError
 
-        params = {"q": q}
+        params = {"q": q, "order": "released"}
 
         client = await self._client()
         async with client.get(URL + "/cards/search", params=params) as resp:
@@ -120,6 +131,8 @@ class PreSearchCardsAction(Action):
 
         dispatcher.utter_message(text="Searching...")
 
+        return []
+
 
 class SearchCardsAction(Action):
     def name(self) -> Text:
@@ -145,10 +158,55 @@ class SearchCardsAction(Action):
             card_rarity=card_rarity,
         )
 
-        for card in cards[:5]:
-            dispatcher.utter_message(text=f"Found this card: {card.name}")
+        dispatcher.utter_message(text=f"Found {len(cards)} cards.")
 
-        return []
+        if cards:
+            dispatcher.utter_message(text="First card:")
+            dispatcher.utter_message(**cards[0].as_utterance())
+
+        return [
+            SlotSet(key="card_results", value=[c.as_dict() for c in cards]),
+            SlotSet(key="card_results_index", value=0),
+        ]
+
+
+class PaginateCardsAction(Action):
+    def name(self) -> Text:
+        return "action_paginate_cards"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        intent = tracker.current_state()["latest_message"]["intent"]["name"]
+        cards = [Card.from_json(c) for c in tracker.get_slot("card_results")]
+        index = tracker.get_slot("card_results_index")
+
+        if not cards:
+            dispatcher.utter_message(text="There are no cards to show.")
+            return []
+
+        if intent == "next_card":
+            if index < len(cards) - 1:
+                index += 1
+                dispatcher.utter_message(text="Next card:")
+                dispatcher.utter_message(**cards[index].as_utterance())
+            else:
+                dispatcher.utter_message(text="No more cards to show.")
+        elif intent == "previous_card":
+            if index > 0:
+                index -= 1
+                dispatcher.utter_message(text="Previous card:")
+                dispatcher.utter_message(**cards[index].as_utterance())
+            else:
+                dispatcher.utter_message(text="No previous cards.")
+        else:
+            dispatcher.utter_message(text="Sorry, I didn't understand that.")
+
+        return [SlotSet(key="card_results_index", value=index)]
 
 
 class RandomCardAction(Action):
@@ -166,4 +224,6 @@ class RandomCardAction(Action):
             card = await api.random_card()
 
         dispatcher.utter_message(text="Here's a random card:")
-        dispatcher.utter_message(text=f"{card.name}")
+        dispatcher.utter_message(**card.as_utterance())
+
+        return []
