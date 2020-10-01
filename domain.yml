@@ -33,7 +33,7 @@ responses:
       - title: "Search for a card"
         payload: "search for a card"
       - title: "Fetch a random card"
-        payload: "fetch a random card"
+        payload: "get random card"
   utter_ok_search_cards:
   - text: Ok. We will search for a card. Can you describe it for me?
   utter_ok_search_sets:
