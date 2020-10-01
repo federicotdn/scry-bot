@@ -3,8 +3,8 @@ rules:
 - rule: respond to chitchat
   steps:
   - intent: chitchat
-  - action: respond_chitchat
+  - action: utter_chitchat
 - rule: respond to meta
   steps:
   - intent: meta
-  - action: respond_meta
+  - action: utter_meta

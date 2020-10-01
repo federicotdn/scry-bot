@@ -4,8 +4,6 @@ actions:
 - action_search_cards
 - action_pre_search_cards
 - action_paginate_cards
-- respond_chitchat
-- respond_meta
 entities:
 - card_color
 - card_rarity
@@ -47,6 +45,13 @@ responses:
         payload: "card"
       - title: "Sets"
         payload: "set"
+  utter_chitchat/thank:
+  - text: No problem!
+  - text: You're welcome.
+  utter_chitchat/challenge_bot:
+  - text: I'm a bot powered by Rasa Open Source.
+  utter_meta/capabilities:
+  - text: I can search for Magic the Gathering cards and sets, using the Scryfall API.
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
