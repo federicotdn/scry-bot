@@ -1,7 +1,7 @@
-.PHONY: test
+.PHONY: test actions
 
 clean:
-	rm -rfv models/ *.dot __pycache__ results
+	rm -rfv models/ *.dot actions/__pycache__ results
 	rm -fv *.db*
 
 retrain: clean
