@@ -1,9 +1,10 @@
 .PHONY: test
 
 clean:
-	rm -rf models/ *.dot
+	rm -rfv models/ *.dot __pycache__/ actions/__pycache__ results
+	rm -fv *.db*
 
-retrain:
+retrain: clean
 	rasa train --force
 
 talk:
