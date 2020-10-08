@@ -57,19 +57,24 @@ session_config:
   session_expiration_time: 60
 slots:
   card_color:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   card_rarity:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   card_subtype:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   card_type:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   card_creature_type:
-    type: unfeaturized
+    type: text
+    influence_conversation: false
   card_results:
-    type: unfeaturized
+    type: any
   card_results_index:
-    type: unfeaturized
+    type: any
   product:
     type: categorical
     values:
